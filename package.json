@@ -1,0 +1,31 @@
+{
+  "name": "react-deep",
+  "version": "1.0.0",
+  "description": "react learned  by raghava ",
+  "scripts": {
+    "test": "raghavendra",
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raghava139/React-Zero-to-Hero.git"
+  },
+  "author": "Raghavendra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raghava139/React-Zero-to-Hero/issues"
+  },
+  "homepage": "https://github.com/raghava139/React-Zero-to-Hero#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "browsersList":[
+    "last 2 versions"
+   ]
+}
