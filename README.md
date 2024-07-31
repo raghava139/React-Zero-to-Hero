@@ -1,5 +1,5 @@
 #Raghavendra Yallamanda
----First---Inception
+# ---First---Inception
 1.Html (Hello World)
 2.JS (Hello World)
 3.React(Hello World)
@@ -12,7 +12,7 @@
     vii. Replacing the Div-Root(example) Inside
     viii.Library Vs FrameWork
 
-------second-------Igniting our App
+# -----second-------Igniting our App
 
 1.package.json is the configure of npm (command- npm init)
 2.npm install -D Parcel ( -d is nothing Development Dependency) (here modules also created)
@@ -54,7 +54,7 @@
 - Different dev and prod bundles ( when builds )
 
 
----------third---laying the foundation
+# ---------third---laying the foundation
 
 # npm scripts
 - actually we are using  'npx parcel index.html' executing the parcel package with source file of index.html;
@@ -130,7 +130,7 @@
 2. <component/>
 3. <component></component>
 
------Fourth ----talk-is-cheap-show-me-the-code
+# -----Fourth ----talk-is-cheap-show-me-the-code
 # Ex -> Food Ordering App
 # planning
     - For Any Application we have to plan before writing the code.
@@ -172,3 +172,96 @@
     - if use index as key--> React to Misidentify Which items have changed .
     - leading to unexpected behaviour
     - unNecessary Re-Renders.
+
+
+
+# ------Fifth ----Let's- Get Hooked
+
+# Folder Structure;
+- Make our folder structure good with human readable and understandable;
+- .js [or] .jsx are same(file names)
+- Hardcoded Strings, Hardcoded Data ---> don't use inside the component directly;
+    1.- the common practices is used to keep in seperate files 
+    2.- some peoples calls like  constant.js, config.js, utlis.js and common.js
+    3.- variable name's  should capital with Snake_Case
+
+# import and export 
+- Export then import files of the components
+- On Import -> .js, .jsx , empty("") not a problem----> because react will treat it JS file By Itself;
+    -> example: import file from '../somefilename.js'
+- There two types of exports 
+    1. Default Export
+    2. Named Export
+       - 1. Default Export:-
+       ---------------------
+            - when we need only one single component or single variable---> we can use default export;
+       -2. Named Export:-
+       --------------------- 
+            - when we need Multiple Components or Multiple Variables ---> we can use Named Export;
+        
+- It standard parctice to keep content(component)  <=100 lines (not more than 100 lines)
+- Default Export and Named Export ---> we Can write both at a time and also import like {destructure}, normal import;
+
+# Event Handlers 
+ - we can the event handlers inside the tags it should be camelCase;
+    EX:- onClick, onMouseHover, onDoubleClick
+
+# UIlayer & Data Layer Updating with Sync
+    # React Things
+     1. Fast DOM Manipulation
+     2. Efficient DOM Manipulation
+     3. Virtual DOM Manipulation
+     4. Diff , Reconcilzation Algorithms
+
+# Normal vs HOOks
+   # Normal
+    - The Normal JS variable will Update The Data-Layer But not the UI-Layer
+   # HOOKS
+    - Hooks are Normal JS Functions
+    - Now We will The UseState;
+   # UseState()
+   - Whenever State Variable Update The React will Re-renders the Component.
+   - Removes the Component and Updates Properly.
+   - This useState Super Power Variable. It will update the Data-Layer along with UI-Layer ->In Sync;
+   - React is good at DOM Manipulation.
+    
+# React Work Behind The Scences--->? 
+- # It's All About Reconciliation Process
+  # 1. What is Reconciliation ?
+     # - Reconciliation is the process React uses to update the real DOM based on the Changes in Virtual DOM.
+     # - and also it involves comparing new VDOM and Previous VDOM  and then applying the necessary changes to the actual DOM.
+  # How Reconciliation Works ?
+     # - 1. Initial Render 
+     # - 2. States or Props Changes 
+     # - 3. Diffing Alogrithm
+     # - 4. Update the Real DOM
+  # -1. Initial Render :-
+      # -------------
+      # - When a React component is first rendered , React Creates a Virtual DOM Tree representing the component's Structure.
+      # - This Virual DOM Tree is then used to generate the  Actual DOM that is displaying on the Screen.
+  # -2. States or Props Changes
+      # ------------
+      # - When a component's state or props change, React needs to update the UI to reflect these changes.
+      # - React creates a new Virtual DOM tree based on the updated state or props.
+  # -3. Diffing Algorithm
+      # ------------
+      # - what is Diffing Alg ?
+       # ------------
+       # -Diffing algo is the core of the reconciliation process.
+       # -It compares the new virtual DOM with Previous Vitrual DOM to Identiy the differences
+      # How It Works ?
+       # ------------
+       # -1. tree diffing ------> to find the differences between compares the root nodes of the new VDOM and old VDOM trees changes.
+       # -2. component diffing ---->  to find the difference between components--> react compares the previous and new States or Props changes.
+  # -4 Update the Real DOM ?
+       # -------------
+       # -1. Based on the comparison. React identifies what has changed in the virtual DOM (e.g., added, removed, or updated elements).
+       # -2. React Then updates the actual DOM to Reflect these changes.
+
+   # What is Virtual DOM ?
+    # - Virtual DOM is Light Weight Copy of the Real DOM (Actual DOM) or Representational 
+    # - When a React component is first rendered , React Creates a Virtual DOM Tree.
+    # - Whenever State or Props changes it will create a New Virtual DOM.
+    # - Now OLD VDOM AND NEW VDOM is comparing and identified the changes is called "DIFFING ALGORITHM".
+    # - Once the VDOM Comparision are completed only that changes particular changes can update in the REAL DOM this process is known as "Reconciliation"
+    # In Normal Words Virtual DOM is not thing React.createElement OBJECT;
