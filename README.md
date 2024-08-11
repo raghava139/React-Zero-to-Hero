@@ -242,48 +242,37 @@ because the server will automatically or manually their use to run npm install a
 - React is good at DOM Manipulation.
 
 # React Work Behind The Scences--->?
-
-- # It's All About Reconciliation Process
-
-  # 1. What is Reconciliation ?
-
-  # - Reconciliation is the process React uses to update the real DOM based on the Changes in Virtual DOM.
-
-  # - and also it involves comparing new VDOM and Previous VDOM and then applying the necessary changes to the actual DOM.
+    # It's All About Reconciliation Process
+    # 1. What is Reconciliation ?
+    # - Reconciliation is the process React uses to update the real DOM based on the Changes in Virtual DOM.
+    # - and also it involves comparing new VDOM and Previous VDOM and then applying the necessary changes to the actual DOM.
 
   # How Reconciliation Works ?
-
-  # - 1. Initial Render
-
-  # - 2. States or Props Changes
-
-  # - 3. Diffing Alogrithm
-
-  # - 4. Update the Real DOM
+        # - 1. Initial Render
+        # - 2. States or Props Changes
+        # - 3. Diffing Alogrithm
+        # - 4. Update the Real DOM
 
   # -1. Initial Render :-
-
-      # -------------
-      # - When a React component is first rendered , React Creates a Virtual DOM Tree representing the component's Structure.
-      # - This Virual DOM Tree is then used to generate the  Actual DOM that is displaying on the Screen.
+        # -------------
+        # - When a React component is first rendered , React Creates a Virtual DOM Tree representing the component's Structure.
+        # - This Virual DOM Tree is then used to generate the  Actual DOM that is displaying on the Screen.
 
   # -2. States or Props Changes
-
-      # ------------
-      # - When a component's state or props change, React needs to update the UI to reflect these changes.
-      # - React creates a new Virtual DOM tree based on the updated state or props.
+        # ------------
+        # - When a component's state or props change, React needs to update the UI to reflect these changes.
+        # - React creates a new Virtual DOM tree based on the updated state or props.
 
   # -3. Diffing Algorithm
-
-      # ------------
-      # - what is Diffing Alg ?
-       # ------------
-       # -Diffing algo is the core of the reconciliation process.
-       # -It compares the new virtual DOM with Previous Vitrual DOM to Identiy the differences
-      # How It Works ?
-       # ------------
-       # -1. tree diffing ------> to find the differences between compares the root nodes of the new VDOM and old VDOM trees changes.
-       # -2. component diffing ---->  to find the difference between components--> react compares the previous and new States or Props changes.
+        # ------------
+        # - what is Diffing Alg ?
+        # ------------
+        # -Diffing algo is the core of the reconciliation process.
+        # -It compares the new virtual DOM with Previous Vitrual DOM to Identiy the differences
+    # How It Works ?
+        # ------------
+        # -1. tree diffing ------> to find the differences between compares the root nodes of the new VDOM and old VDOM trees changes.
+        # -2. component diffing ---->  to find the difference between components--> react compares the previous and new States or Props changes.
 
   # -4 Update the Real DOM ?
 
@@ -292,18 +281,12 @@ because the server will automatically or manually their use to run npm install a
        # -2. React Then updates the actual DOM to Reflect these changes.
 
   # What is Virtual DOM ?
-
-  # - Virtual DOM is Light Weight Copy of the Real DOM (Actual DOM) or Representational
-
-  # - When a React component is first rendered , React Creates a Virtual DOM Tree.
-
-  # - Whenever State or Props changes it will create a New Virtual DOM.
-
-  # - Now OLD VDOM AND NEW VDOM is comparing and identified the changes is called "DIFFING ALGORITHM".
-
-  # - Once the VDOM Comparision are completed only that changes particular changes can update in the REAL DOM this process is known as "Reconciliation"
-
-  # In Normal Words Virtual DOM is not thing React.createElement OBJECT;
+        # - Virtual DOM is Light Weight Copy of the Real DOM (Actual DOM) or Representational
+        # - When a React component is first rendered , React Creates a Virtual DOM Tree.
+        # - Whenever State or Props changes it will create a New Virtual DOM.
+        # - Now OLD VDOM AND NEW VDOM is comparing and identified the changes is called "DIFFING ALGORITHM".
+        # - Once the VDOM Comparision are completed only that changes particular changes can update in the REAL DOM this process is known as "Reconciliation"
+        # In Normal Words Virtual DOM is not thing React.createElement OBJECT;
 
   # -----Six ----Exploring-The-World...
 
