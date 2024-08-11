@@ -311,55 +311,35 @@ because the server will automatically or manually their use to run npm install a
 
   # 2. Micro Services.
 
-  # -------> 1. MONO - All Together and do the project like API, UI , AUTH, DB, NOTIFICATION
-
-  # -------> 2. MICRO - Seperation of consense and single reponsibility principle
-
-  # ------> These are all servers can be together is called 'micro-services'
-
-  # -------> They have languages for all like UI- React, BE-Java
-
-  # -----> They Have ports UI-3000, BE-5000, SMS -300
+     # -------> 1. MONO - All Together and do the project like API, UI , AUTH, DB, NOTIFICATION
+     # -------> 2. MICRO - Seperation of consense and single reponsibility principle
+     # ------> These are all servers can be together is called 'micro-services'
+     # -------> They have languages for all like UI- React, BE-Java
+     # -----> They Have ports UI-3000, BE-5000, SMS -300
 
   # HOW WEB API'S FETCH THE DATA FROM BACKEND
-
   # ----------------------------------------------
-
-  # - They are Two Approaches
-
+     # - They are Two Approaches
        # - 1. loads --> API --> Render
        # - 2. loads --> Render ---> API ---> Render
 
   # The second loads > Render > API > Render this becomes better UX.
 
 # When UseEffect Works
-
 # -----------------------------
-
-# Component ---> outside ---> HTML ---> UseEffect
-
-# UseEffect syntax useEffect(()=>{},[] ) Callback Function , Dependencies
-
+   # Component ---> outside ---> HTML ---> UseEffect
+   # UseEffect syntax useEffect(()=>{},[] ) Callback Function , Dependencies
 # Cors Extension in browser (using for local api works);
 
 # SHIMMER UI
-
 # -----------------------------
-
-# SHIMMER UI is nothing skeleton loading
-
-# Conditional Rendering ---> condition ? True: False
+   # SHIMMER UI is nothing skeleton loading
+   # Conditional Rendering ---> condition ? True: False
 
 # const[x,setX]= useState();
-
 # HOW it was chnge it is const variable ?
-
-# -----------------------------------------
-
-# Because when setX is called the OLD X is Changed to NEW X Variable.
-
-# Because when setX is Called the whole components get Render then OLD VDOM and NEW VDOM Will compare >
-
-# and update VDOM it will takes and update that new variable 'X' (Only Necessary Things get update)
-
+# ----------------------------------------
+   # Because when setX is called the OLD X is Changed to NEW X Variable.
+   # Because when setX is Called the whole components get Render then OLD VDOM and NEW VDOM Will compare >
+   # and update VDOM it will takes and update that new variable 'X' (Only Necessary Things get update)
 # Whenever State Variable Update , React Triggers a Reconciliation Cycle (renders the component)
