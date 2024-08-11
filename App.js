@@ -7,8 +7,6 @@ import Body from "./src/components/Body";
 //the Babel Transpiler Converts the code Jsx to React.createElement 
 // the babel is coming from Parcel
 
-const TestElement = React.createElement('div')
-console.log(TestElement)
 const AppLayout = () => {
   return (
     <div className="App">

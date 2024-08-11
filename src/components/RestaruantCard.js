@@ -1,7 +1,7 @@
 import { RES_URL } from "./Utils/constants";
 
 const RestaruantCard = (props) => {
-    console.log(`props- ${props}`)
+
     const { resData } = props;
     const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } = resData?.info;
     const { deliveryTime } = sla;
