@@ -242,28 +242,33 @@ because the server will automatically or manually their use to run npm install a
 - React is good at DOM Manipulation.
 
 # React Work Behind The Scences--->?
+
     # It's All About Reconciliation Process
     # 1. What is Reconciliation ?
     # - Reconciliation is the process React uses to update the real DOM based on the Changes in Virtual DOM.
     # - and also it involves comparing new VDOM and Previous VDOM and then applying the necessary changes to the actual DOM.
 
-  # How Reconciliation Works ?
+# How Reconciliation Works ?
+
         # - 1. Initial Render
         # - 2. States or Props Changes
         # - 3. Diffing Alogrithm
         # - 4. Update the Real DOM
 
-  # -1. Initial Render :-
+# -1. Initial Render :-
+
         # -------------
         # - When a React component is first rendered , React Creates a Virtual DOM Tree representing the component's Structure.
         # - This Virual DOM Tree is then used to generate the  Actual DOM that is displaying on the Screen.
 
-  # -2. States or Props Changes
+# -2. States or Props Changes
+
         # ------------
         # - When a component's state or props change, React needs to update the UI to reflect these changes.
         # - React creates a new Virtual DOM tree based on the updated state or props.
 
-  # -3. Diffing Algorithm
+# -3. Diffing Algorithm
+
         # ------------
         # - what is Diffing Alg ?
         # ------------
@@ -274,13 +279,14 @@ because the server will automatically or manually their use to run npm install a
         # -1. tree diffing ------> to find the differences between compares the root nodes of the new VDOM and old VDOM trees changes.
         # -2. component diffing ---->  to find the difference between components--> react compares the previous and new States or Props changes.
 
-  # -4 Update the Real DOM ?
+# -4 Update the Real DOM ?
 
        # -------------
        # -1. Based on the comparison. React identifies what has changed in the virtual DOM (e.g., added, removed, or updated elements).
        # -2. React Then updates the actual DOM to Reflect these changes.
 
-  # What is Virtual DOM ?
+# What is Virtual DOM ?
+
         # - Virtual DOM is Light Weight Copy of the Real DOM (Actual DOM) or Representational
         # - When a React component is first rendered , React Creates a Virtual DOM Tree.
         # - Whenever State or Props changes it will create a New Virtual DOM.
@@ -288,11 +294,11 @@ because the server will automatically or manually their use to run npm install a
         # - Once the VDOM Comparision are completed only that changes particular changes can update in the REAL DOM this process is known as "Reconciliation"
         # In Normal Words Virtual DOM is not thing React.createElement OBJECT;
 
-  # -----Six ----Exploring-The-World...
+# -----Six ----Exploring-The-World...
 
-  # 1. Monolith Archieture.
+# 1. Monolith Archieture.
 
-  # 2. Micro Services.
+# 2. Micro Services.
 
         # -------> 1. MONO - All Together and do the project like API, UI , AUTH, DB, NOTIFICATION
         # -------> 2. MICRO - Seperation of consense and single reponsibility principle
@@ -300,7 +306,8 @@ because the server will automatically or manually their use to run npm install a
         # -------> They have languages for all like UI- React, BE-Java
         # -----> They Have ports UI-3000, BE-5000, SMS -300
 
-  # HOW WEB API'S FETCH THE DATA FROM BACKEND
+# HOW WEB API'S FETCH THE DATA FROM BACKEND
+
         # ----------------------------------------------
         # - They are Two Approaches
         # - 1. loads --> API --> Render
@@ -308,20 +315,60 @@ because the server will automatically or manually their use to run npm install a
         # The second loads > Render > API > Render this becomes better UX.
 
 # When UseEffect Works
+
      # -----------------------------
      # Component ---> outside ---> HTML ---> UseEffect
      # UseEffect syntax useEffect(()=>{},[] ) Callback Function , Dependencies
+
 # Cors Extension in browser (using for local api works);
 
 # SHIMMER UI
+
      # -----------------------------
      # SHIMMER UI is nothing skeleton loading
      # Conditional Rendering ---> condition ? True: False
 
 # const[x,setX]= useState();
+
 # HOW it was chnge it is const variable ?
+
     # ----------------------------------------
     # Because when setX is called the OLD X is Changed to NEW X Variable.
     # Because when setX is Called the whole components get Render then OLD VDOM and NEW VDOM Will compare >
     # and update VDOM it will takes and update that new variable 'X' (Only Necessary Things get update)
     # Whenever State Variable Update , React Triggers a Reconciliation Cycle (renders the component)
+
+# -----Seventh ----Find The Path...
+
+# How The USeEffect Works
+     - 1 UseEffect(()=>{})
+     - 2 useEffect(()=>{},[])
+     - 3 useEffect(()=>{},[state])
+        -1.if no dependency array => useEffect is called on every render;
+        -2.if the dependency array is empty[] => useEffect is called on initial render(calls  first render);
+        -3.if the dependency array is something[state] => useEffect is called whenever state updates;
+
+# useState Using Rules
+      - 1 It must be inside of our component.
+      - 2 It Must be use top level
+      - 3. Never use inside conditions, loops, any other functions...
+
+# How do we use Routing inside React.
+# There are Two types of Routing.
+      -1. client side routing ---> ex:- React-Router-Dom.
+      -2. server side routing ---> ex:- Server Side routing render single seperate html
+
+# Inside React we are using client side routing:-
+     # steps For Routing;-
+     1.npm i react-router-dom
+     2.imports ---> createBrowserRouter,RouterProvider,useRouteError,useParams,Link
+     3.path, element,errorElement
+     4.childrenRoutes---> path,element,errorElement.
+     5.Outlet---> It will Replaces the Children Routes.
+     6. Dynamic Routes---> ex:- /name/:id
+     7. useParams---> It is used for get the props from url "/name/:id" id it is the props;
+     7. useRouteError--> if we enter the wrong url (or)  Any Route Error the useRouteError Helps to show what message we need to show on browser(using component);
+     8.Anchor-Tag vs Link-Tag
+       -1. anchor-tag:- when you click on hyperlink it will reload the page;
+       -2. link-tag- when you click on hyperlink it will render only the component(not whole Page Reload)
+
