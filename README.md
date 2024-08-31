@@ -372,3 +372,80 @@ because the server will automatically or manually their use to run npm install a
        -1. anchor-tag:- when you click on hyperlink it will reload the page;
        -2. link-tag- when you click on hyperlink it will render only the component(not whole Page Reload)
 
+# -----EightH ----Let's Get Classy....
+ -In these We are using Class based components
+ -class component
+   - 1. class keyword
+   - 2. class name
+   - 3. extends 
+   - 4. React.component
+   - 5. constructor
+   - 6. super keyword
+   - 7. render  and return
+   - 8. component did mount
+   - 9. component did update.
+   - 10. component will unmount.
+   - 11. and other own methods [or] functions.
+   - 12. what is instance.
+
+  - 1. "class" is a keyword  and it defines a blueprint for creating objects.
+  - 2. "class name"  - The identifier given to a class 
+  - 3. "Extends" - To Inherit the features of another class.
+  - 4. "React.component" - To Inherit the features of react (providing lifecycle methods and state management)
+  - 5. "constructor" - A Special Method used to initalize an object's properties. when an instance of the class is created.
+  - 6. "super Keyword" - Used inside a constructor to call the constructor of the parent class, ensuring the child class inherits properties and methods.
+  - 7. Render - A method that returns JSX
+  - 8. componentDidMount: A lifecycle method called after a component is mounted to the DOM, often used for initializing data.
+  - 9. componentDidUpdate: A lifecycle method called after a component updates, allowing for actions based on changes in props or state.
+  - 10. componentWillUnmount: A lifecycle method called right before a component is removed from the DOM, typically used for cleanup tasks.
+  - 12. what is instance:-
+        - An instance is a specific object created using a class.
+        - Each instance has it's own set of props and methods based on the class.
+        - Each one is Unique.
+  - How can  we use the props inside class?
+    -A. using super keyword - super(props);
+  -How to we use the states in class based components?
+    -A. this.state={
+          count:1,
+          count:2, 
+      }
+    -B. this.state.count
+    -c. this is Refer to current instance of the current class and allow "properties(state & props) and methods"
+ - How can we update the state inside Class based components ?
+    -A. this.setState({count:this.state.count+1})
+# Website -class based component(figure)
+  - website- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+# Phases in Components
+  - Render phase and commit phase
+     - Render Phase - constructor and render
+     - commit Phase - react dom and componentdid mount etc..,
+# how the Class Components Works
+ - Constructor -> render and [returns jsx] -> componentDiDMount -> this.setState() calls then "ComponentDidUpdate()" calls  ->  clean up tasks "ComponentWillUnmount" will calls
+# parent and child relation works in class based component
+  - Now we will check  how it works in class based components.
+  - suppose there is parent component inside child component like that
+   ex - 1.first component constructor
+      - 2. first component render
+      - 3. second component constructor
+      - 4. second component render
+      - 5. third component constructor
+      - 6. third component render
+      - 7. second component ComponentDidMount();[child1]
+      - 8. third component ComponentDidMount(); [child2]
+      - 9. First component ComoponentDidMount();[parent]
+  -Dom Updated in single batch [DidMount]
+
+# life cycle methods Difference between class based components and functional based components
+   - componentDidMount() ===> useEffect(()=>{},[])  For every initial render
+   - componentDidUpdate(prevProps,PrevState){
+      if(this.state.count !== PrevState){
+
+      }
+      if(this.state.count2 !== PrevState)
+      } 
+      ===> useEffect(()=>{},[count,count2]) 
+    - componentWillUnmount() ===> useEffect(()=>
+                                            { 
+                                              return()=>cleauptase
+                                            }
+                                          )
