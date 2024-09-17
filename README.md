@@ -449,3 +449,42 @@ because the server will automatically or manually their use to run npm install a
                                               return()=>cleauptase
                                             }
                                           )
+                                          
+# -----nineTH ----Optimizing Your APP....       
+1.custom Hooks
+2.Single Responsbility Principle
+  i.Resuable
+  ii.maintable
+  iii.testable
+custom Hooks Tips
+1. what is the contract
+2. what is the input 
+3. what is the output 
+
+# Custom Hooks
+In custom Hooks 
+-"use" is not mandratory in Custom Hooks but using "use" is good practice
+
+# Bundlers
+- for Large scale Applications to create small bundlers is known as chunking, codespliting.
+-Large Scale Applications
+1. chunking
+2. code spliting
+3. dynamic bundling
+4. lazy load 
+5. on demand loading 
+
+-Smaller Scale Applications
+1. One Single File is Enough.
+
+-Lazy Loading
+1. import from react(lazy and suspense)
+2. const test = lazy(()=>import('../path'))
+3. suspense---> it is a component.
+4. fallback --> it is using inside the suspense when the component rendering time it's loads the html...
+
+conclusion:
+- Actually we are using normal Hooks But when we want the best resuable logic to create "custom Hooks"
+- Bundling the js files if small Application you can use the normal file(single file of bundle),
+  if the Application is Large the you have to code split and create the bundles in chunks(pieces)
+- if you use the lazy loading the whenever triggers the componet at the time only it will render other can't load this is the use of lazy loading.

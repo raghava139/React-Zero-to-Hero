@@ -3,6 +3,7 @@ import RestaruantCard from "./RestaruantCard";
 import { resList } from "./Utils/mockData";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./Utils/useOnlineStatus";
 
 const Body = () => {
     //useState ===> it's super powerful variable
@@ -22,6 +23,11 @@ const Body = () => {
         console.log('json', json)
         setListofRestrsCards(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredRestarunts(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
+    const onlinseStatus = useOnlineStatus();
+    if(onlinseStatus === false){
+        return <h1>Your Internet Connection is offline</h1>
     }
     return listofRestrsCards?.length === 0 ? <Shimmer /> : (
         <div className="body">
