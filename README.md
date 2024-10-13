@@ -449,7 +449,7 @@ because the server will automatically or manually their use to run npm install a
                                               return()=>cleauptase
                                             }
                                           )
-                                          
+
 # -----nineTH ----Optimizing Your APP....       
 1.custom Hooks
 2.Single Responsbility Principle
@@ -483,8 +483,57 @@ In custom Hooks
 3. suspense---> it is a component.
 4. fallback --> it is using inside the suspense when the component rendering time it's loads the html...
 
+
 conclusion:
 - Actually we are using normal Hooks But when we want the best resuable logic to create "custom Hooks"
 - Bundling the js files if small Application you can use the normal file(single file of bundle),
   if the Application is Large the you have to code split and create the bundles in chunks(pieces)
 - if you use the lazy loading the whenever triggers the componet at the time only it will render other can't load this is the use of lazy loading.
+
+
+# -----Tenth---Jo Dikhta Hai Vo Biktha Hai   
+- How Many Ways to Use Css
+  - 1. Normal CSS 
+  - 2. Sass and Scss is not recommended
+  - 3. Styled Components is the best ways -> commonly 
+  - 4. * using some frame works like  Bootstrap, Ant-D, Material-UI, Chakra-UI, Tailwind CSS
+       * we can use Whatever we need which is your wish but the good way to use is "Tailwind CSS"
+  - 5. How to configure the tailwind css in our Project.
+       -steps-
+          i. first we need to check in website of tailwind-css whether it is parcel, vite, etc..., Then Go the Link.
+          ii. install tailwindcss postcss
+          iii. what is postcss --> it is transform  css with javascript.
+          iv. npx tailwind css ---> this command will create's the  tailwind -> "config file".
+          v. Next-> we need create file that is ".postcssrc"
+          vi. In that ".postcssrc" i need to copy from website these lines --> 
+              {
+                "plugins": {
+                  "tailwindcss": {}
+                }
+              }
+          vii. Tailwind config file we can paste these lines  Means to accept all the files and use the css in that files
+                 content: [
+                  "./src/**/*.{html,js}",
+                ],
+          vii. In "index.css" file we need to remove the all css and paste these lines 
+            ----> base, components, utilites
+            --- > @tailwind base;
+                  @tailwind components;
+                  @tailwind utilities;
+
+          viii. --> "postcssrc" is used to understand the "tailwindcss".
+                --> parcel is used "postcssrc".
+           ix. we can check the classnames from website like flex, justify-content  etc..,
+           x.  VSCODE Extension --> "tailwind css intelisense" --->  showing suggesitions
+           XI. px--> x-axis --> left and right.
+           XII. py --> y-axis --> top and bottom.
+           XIII. when we dynamic pixels like that we can use---> w-[200px]
+           XIV. sm:bg-yellow-500 means Greater than SM that CSS Will Apply.
+           XV. DarkMode;
+           XVI No Duplications.
+           XVII. Only Required CSS Will be parcel will taken.(not all css imports)
+           XVIII. my-4--> this css we can use in multiple(100) times but only 1 time it has the CSS.
+
+  -6. CONS:
+      i. Code Looks Ugly (To Lengthy Lines);
+      ii. Initial Understand or Learning Problem then after its easy.

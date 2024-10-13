@@ -26,36 +26,43 @@ const Body = () => {
     }
 
     const onlinseStatus = useOnlineStatus();
-    if(onlinseStatus === false){
+    if (onlinseStatus === false) {
         return <h1>Your Internet Connection is offline</h1>
     }
     return listofRestrsCards?.length === 0 ? <Shimmer /> : (
         <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(e) => {
-                        setSearchText(e.target.value)
-                    }} />
-                    <button onClick={() => {
-                        console.log('searchtext', searchText);
-                        const filteredRests = listofRestrsCards.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
-                        console.log('filteredRests', filteredRests)
-                        setFilteredRestarunts(filteredRests)
-                    }}>search</button>
+            <div className="filter flex">
+                <div className="search m-4 p-4">
+                    <input type="text"
+                        className="border border-solid border-black"
+                        value={searchText} onChange={(e) => {
+                            setSearchText(e.target.value)
+                        }} />
+                    <button
+                        className="px-4 py-2  bg-green-100 m-4 rounded-lg"
+                        onClick={() => {
+                            console.log('searchtext', searchText);
+                            const filteredRests = listofRestrsCards.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
+                            console.log('filteredRests', filteredRests)
+                            setFilteredRestarunts(filteredRests)
+                        }}>search</button>
                 </div>
-                <button className="filter-btn" onClick={() => {
-                    let filteredCards = listofRestrsCards.filter((rest) => {
-                        return rest.info.avgRating > 4.3
-                    })
-                    console.log('listofRestrs', filteredCards)
-                    setListofRestrsCards(filteredCards);
-                }}>Top Rated Restaruants</button>
+                <div className="search m-4 p-4">
+                    <button 
+                    className="px-4 py-2  bg-gray-100 m-4 rounded-lg" onClick={() => {
+                        let filteredCards = listofRestrsCards.filter((rest) => {
+                            return rest.info.avgRating > 4.3
+                        })
+                        console.log('listofRestrs', filteredCards)
+                        setListofRestrsCards(filteredCards);
+                    }}>Top Rated Restaruants</button>
+                </div>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {
                     filteredCards.map((restc) => (
                         <Link to={`/restro/${restc.info.id}`} key={restc.info.id}>
-                            <RestaruantCard  resData={restc} />
+                            <RestaruantCard resData={restc} />
                         </Link>
                     ))
                 }
