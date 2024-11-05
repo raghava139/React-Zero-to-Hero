@@ -1,6 +1,7 @@
 import User from "./User";
 import UserClass from "./UserClass";
 import { Component } from "react";
+import UserTestContext from "./Utils/UserTestContext";
 
 class About extends Component {
 
@@ -9,15 +10,18 @@ class About extends Component {
         // console.log('parent constructor')
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // console.log('parent mounting')
     }
     render() {
         // console.log('parent render')
         return (
             <div>
+                <UserTestContext.Consumer>
+                    {(data) => <h1>{data?.DefaultUserInfo}</h1>}
+                </UserTestContext.Consumer>
                 About Page
-                <User/>
+                <User />
                 {/* <UserClass name={'testing-name(class-based)'} /> */}
             </div>
         )

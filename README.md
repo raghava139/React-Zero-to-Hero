@@ -537,3 +537,53 @@ conclusion:
   -6. CONS:
       i. Code Looks Ugly (To Lengthy Lines);
       ii. Initial Understand or Learning Problem then after its easy.
+
+
+# -------Elventh-Data is the new Oil------
+-I. Higher Order Component (HOC)
+  -Higher Order Component is function that takes a component and returns a new component.
+  -Higher Order Component is Pure Function...Because -> they don’t modify their inputs or the state of the wrapped component in unpredictable ways
+  -High Order Component to Enhance the Component.
+  -In -normal words-> HOC is a Function that takes component and return a new component and that component return some piece of JSX Code..!
+
+-II.Controlled and Uncontrolled Component (Best Example Accordion)
+ -----Controlled Components------
+ - Controlled Components are those in which form’s data is handled by the component’s state. It takes its current value through props and makes changes through callbacks like onClick, onChange, etc. 
+ - A parent component manages its own state and passes the new values as props to the controlled component.
+
+ -----unControlled Components-----
+ - ex:- Uncontrolled Components are the components that do not rely on the React state and are handled by the DOM.
+        So in order to access any value that has been entered we take the help of refs.
+
+-II.Lifting State UP (Best Example Accordion)
+-"Lifting state up" in React means moving shared data to a parent component so multiple child components can access it.
+- The parent holds one source of truth
+
+-III.Props Drilling 
+ - In React, props drilling refers to the process of passing data from a parent component down to deeply nested child components by passing props through intermediate components that don't actually need the data themselves. 
+
+-III. React Context
+ -> To Avoid the Props Drilling -> You can use the React Context.
+ -> The Context API allows you to easily share and manage state across multiple components without passing props at each level. This is especially helpful for global data, like themes, user info, or language settings, that multiple components need to access etc...,
+ -> -particular Component-
+    const x = createContex({
+      default-context:'any'
+    })
+ 
+ ->---In Functional Based Components--- 
+ - createContext, UseContext(component)
+ 
+ ->---In Class Based Components---
+ -> To Pass the data using class components or global wrapping
+   <component.Provider value={text,setState,object}>
+      </App>
+    </component.Provider>
+ -> To Get the value in class based components
+    <component.Consumer>
+      {(data)=><h1>{data?.username}</h1>}
+    </component.Consumer>
+
+  -IV. React Developer Extensions--> Components , Profile
+  -V. Applications Uses
+      -For Small,Medium applications no need Redux. You Can use UseContext.
+      -For Big applications we Can use Redux (or) You Can Use UseContext.

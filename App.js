@@ -1,4 +1,4 @@
-import React, { createElement, lazy, Suspense } from "react";
+import React, { createElement, lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from 'react-dom/client';
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
@@ -7,6 +7,7 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import ErrorPage from "./src/components/ErrorPage";
 import RestroMenu from "./src/components/RestroMenu";
+import UserTestContext from "./src/components/Utils/UserTestContext";
 // import Grocery from "./src/components/Grocery";
 // React CreateElement => Object => Html ELement(render)
 // Jsx => React createElement => object => html Element(render)
@@ -14,12 +15,16 @@ import RestroMenu from "./src/components/RestroMenu";
 // the babel is coming from Parcel
 
 const AppLayout = () => {
+
+  const [contextState, setContextState] = useState('Developer-Test')
   return (
-    <div className="App">
-      <Header />
-      {/* <Body /> */}
-      <Outlet />
-    </div>
+    <UserTestContext.Provider value={{ DefaultUserInfo: contextState, setContextState }}>
+      <div className="App">
+        <Header />
+        {/* <Body /> */}
+        <Outlet />
+      </div>
+    </UserTestContext.Provider>
   )
 }
 

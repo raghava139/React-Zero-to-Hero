@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "./Utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./Utils/useOnlineStatus";
+import UserTestContext from "./Utils/UserTestContext";
 
 const Header = () => {
 
@@ -14,6 +15,9 @@ const Header = () => {
   //   }
   // },[btnName])
   const onlinseStatus = useOnlineStatus();
+
+  const {DefaultUserInfo} = useContext(UserTestContext);
+  console.log('user-->',DefaultUserInfo);
   return (
     <div className="flex justify-between pink bg-pink-100 shadow-lg">
       <div className="logo-container">
@@ -31,6 +35,7 @@ const Header = () => {
             onClick={() => {
               btnName === "LOGIN" ? setBtnName('LOGOUT') : setBtnName('LOGIN')
             }}>{btnName}</button>
+            <li className="px-4">{DefaultUserInfo}</li>
         </ul>
       </div>
     </div>
