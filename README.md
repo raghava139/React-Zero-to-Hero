@@ -22,7 +22,8 @@ viii.Library Vs FrameWork
 4.In Package.json there are symbols like --> caret(^) and tilde(~)
 i.caret(^) --> It matches minor and patch versions
 ii.Tilde(~) --> It Matches only patch versions
-example: 2.1.8 --> Here 2 is major , 1 is minor, 8 is the patch 5. package.lock.json --->
+example: 2.1.8 --> Here 2 is major , 1 is minor, 8 is the patch 
+5. package.lock.json --->
 i. there is nested dependencies
 ii. It tracks the Exact versions of every installed pacakge, including 'Nested Dependencies' 6. npx parcel index.html---> it executes the parcel of src html file in local host 7. npm install react and npm install react-dom 8. don't use the cdn link. becuase the cdn link makes network
 and then you are using that react. so basically local folder there is react code we are using that's better. 9. import the react from nodemodules like ---> import React from 'react' 10. the browser can't understand your script imports that's why we are using script type="module" 11. we don't push the code in github folders like nodemodules,dist etc..., whatever you are installing.
@@ -587,3 +588,71 @@ conclusion:
   -V. Applications Uses
       -For Small,Medium applications no need Redux. You Can use UseContext.
       -For Big applications we Can use Redux (or) You Can Use UseContext.
+
+
+# -------TWevele---------Lets-Build-our-Store------
+- Redux is Not Mandratory for all applications.
+- when if need you can use like Big Scale Applications.
+- Redux Devtools Extension -> easy to debugging for Redux.
+- React is Different Library.
+- Redux is Different Library.
+- so, Combined these two (react and redux) it's powerful way to manage the state.
+--------------
+- There is 2 ways to use
+-  1. Redux
+-  2. Redux Toolkit (RTK).
+- Redux and Redux Toolkit (RTK) are both used for state management in React applications, 
+- 1 --Redux--- 
+  -  Redux is a predictable state container for JavaScript applications. 
+  - It follows a strict unidirectional data flow and provides a way to manage the state of an application using actions, reducers, and a central store.
+  - Boilerplate Code, Middleware, Manual Configuration.
+- 2 --Redux Toolkit---
+  - Redux Toolkit is the official, recommended way to use Redux. 
+  - It simplifies Redux development by providing opinionated and pre-built utilities for common Redux tasks.
+  - Less Boilerplate, Built-in Middleware and DevTools , Immutable State Handling , Simplified Store Configuration , Async Logic Management
+
+-------------------------
+Now We are using Redux Toolkit Here:
+- Redux Store is big Object it kept's in a central place.
+- suppose there is button name called "ADD +".
+    - In these when we click the "ADD +" Button.
+    - Dispatch an Action ->  Reducer Function -> will modify the slices (inside store) -> selector(subscribed to the store using a selector) -> Updated the Cart Component.
+- Havings
+  - Action(useDispatch) -> Reducer -> store(slices) -> selector(useSelector)(using Provider Wrapping).
+
+- How To Use The Redux Toolkit.
+1. install the libraries.
+    -i. npm install @reduxjs/toolkit.
+    -ii. npm install react-redux.
+2. Build Our Store(configureStore(reducer)).
+3. connect our store to our app ( using Provider example: <Provider store={appStore}> )
+4. Slice (Cart Slice);->> name,initialState,reducers(reducer functions); -> exports(actions,reducer);
+5. Dipatch Action (using const dispatch = useDispatch());
+6. Get The store Data Using UseSelector.
+---------------------------------
+Interview Questions -> Redux Toolkit.
+--------------------
+ <- Performance Issues -> 
+- useSelector(x=>x.data)(wrong way to get data)(Performance Issue)
+- useSelector(x=>x.data.cart)(correct way to use)(whatever data need-not whole data)
+
+ <- Reducer Confusion->
+- 1. one Big reducer to your app store -> it contains mutiple small reducers.
+- 2. In Another one is --> Create Slice -> there is a multiple smaller reducers function.
+
+<- redux or reduxtoolkit(return states) ->
+  - Vanialla (older) or Redux => Don't Mutate State.
+      - const newState = [...state];
+      newState.items.push(action.payload);
+      return newState;
+      - return is mandratory.
+
+  - Redux Toolkit => we Can Mutate the State.
+    - We have to mutate the State.
+     state.items.push(action.payload);
+    - return is not mandratory.
+  
+- But in Toolkit Behind The Scences it is doing older way ...
+- So old comparision  and new sate comparision -> This will do it " immerjs ".
+- Redux DevTools Extension to Easy way to Debugging...
+- RTK Query Quick Start-> Documentation(Learn)

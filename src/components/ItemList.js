@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
 import { RES_URL } from "./Utils/constants";
+import { addItem } from "./Utils/Redux RTK/slices/Cartslice";
 
 const ItemList = ({ items }) => {
     console.log('items', items)
+     const dispatch = useDispatch();
+    const  handleAddItem= (item)=>{
+        //Dispatch An Action
+        dispatch(addItem(item))
+    }
     return (
         <div>
             {
@@ -17,7 +24,7 @@ const ItemList = ({ items }) => {
 
                         <div className="w-3/12 p-2">
                         <div className="absolute">
-                            <button className="p-2 shadow-lg bg-black text-white mx-20 my-20 rounded-lg"> ADD + </button>
+                            <button className="p-2 shadow-lg bg-black text-white mx-20 my-20 rounded-lg" onClick={()=>handleAddItem(item)}> ADD + </button>
                         </div>
                             <img src={RES_URL + item?.card?.info?.imageId} alt="res-logo" className="w-full" />
                         </div>
