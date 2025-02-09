@@ -47,6 +47,7 @@ const Body = () => {
                 <div className="search m-4 p-4">
                     <input type="text"
                         className="border border-solid border-black"
+                        data-testid="input_search_test"
                         value={searchText} onChange={(e) => {
                             setSearchText(e.target.value)
                         }} />
@@ -63,10 +64,10 @@ const Body = () => {
                     <button
                         className="px-4 py-2  bg-gray-100 m-4 rounded-lg" onClick={() => {
                             let filteredCards = listofRestrsCards.filter((rest) => {
-                                return rest.info.avgRating > 4.3
+                                return rest.info.avgRating > 4.1
                             })
                             console.log('listofRestrs', filteredCards)
-                            setListofRestrsCards(filteredCards);
+                            setFilteredRestarunts(filteredCards);
                         }}>Top Rated Restaruants</button>
                 </div>
 

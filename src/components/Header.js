@@ -23,7 +23,7 @@ const Header = () => {
 
   //Subscribing the store using a selector;
 
-  console.log('cart', cartItems)
+  // console.log('cart', cartItems)
   return (
     <div className="flex justify-between pink bg-pink-100 shadow-lg">
       <div className="logo-container">

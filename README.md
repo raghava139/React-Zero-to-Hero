@@ -635,6 +635,7 @@ Interview Questions -> Redux Toolkit.
  <- Performance Issues -> 
 - useSelector(x=>x.data)(wrong way to get data)(Performance Issue)
 - useSelector(x=>x.data.cart)(correct way to use)(whatever data need-not whole data)
+- Because WhenEver Store Changes Whole Store Will Be Render and Update.
 
  <- Reducer Confusion->
 - 1. one Big reducer to your app store -> it contains mutiple small reducers.
@@ -655,4 +656,66 @@ Interview Questions -> Redux Toolkit.
 - But in Toolkit Behind The Scences it is doing older way ...
 - So old comparision  and new sate comparision -> This will do it " immerjs ".
 - Redux DevTools Extension to Easy way to Debugging...
-- RTK Query Quick Start-> Documentation(Learn)
+- RTK Query Quick Start-> Documentation(Learn)  
+
+
+# -------thirteen---------Time for Test------
+-types of testing (developer)-
+1.Unit Testing ( Isolation )
+2.Integration Testing ( Component to each Other)
+3.End to End Testing (process)
+- As a Developer first two as developer related testing.
+- one of the best library most comanies used "React Testing Library"(RTL).
+- RTL -> Builds on top of DOM testing library
+- if you create using "create-react-app" it is default inside the project .If not there you can install "RTL".
+- React Testing Library is used DOM.
+- Testing Library -> It will use "Jest" -> It's a normal JS Testing Framework.
+-steps-
+1.npm install -D @testingLibary/react
+2.npm install -D jest
+3.inside Jest website using Babel we need install-> npm install -D babel-jest @babel/core @babel/preset-env.
+4.babel.config.js---> export module -> this is inside jest website
+
+#settingUp Testing in our app:-
+#-----------------------------
+1. installed RTL libary (npm install -D @testingLibary/react)
+2. installed Jest Libary (npm install -D jest)
+3. installed babel Dependencies (npm install -D babel-jest @babel/core @babel/preset-env.)
+4. configured babel-gets
+5. To config parcel config file to disable the babel transpiler.
+   - parcel uses behind the scences babel
+   - there is conflicts between parcel's babel config [ & ] own custom babel config.
+   - Go TO Parcel Docs -> Javascript -> Babel 
+   - || inside the babel the parcel says if there is a override like jest,eslint.
+   - || to disable the babel transpilation in parcel , overrided the default parcel config for javascript to exclude @parcel/transformer-babel -> use '.parcelrc.file'
+   - to configure parcel config file -to-disable the babel transpilation
+   - now we can use own config file 
+6. scripts -> "test":"jest"
+7. npm run test
+8. testing configuration  ( npm jest --init )
+9. JSDOM -> Install Jsdom environment (inside RTL Libary jest 28) (>28 -> jest)
+        --> npm install --save-dev jest-environment-jsdom (it creates a config file).
+10. __test___ folder we can create( this __ is known as "Dunder")
+11. npm i @babel/preset-react -Dev  (to make JSX Work in test cases).
+12. include @babel/preset-react inside my babel configuration
+#example:
+#----------
+  module.exports = {
+  presets: [
+    ['@babel/preset-env', { targets: { node: 'current' } }],
+    ['@babel/preset-react', { runtime: "automatic" }]
+  ],
+  };
+#--------------------------------------------
+#Unit Testing
+ -----------------
+Basic testing
+1. Render
+2. Querying 
+3. Assertion
+
+1. Render Method:-
+- Render The component like render(<comp/>) -> It will Render the JS-DOM
+- Screen is an Object coming From @testing-library/react.
+Ex: screen.getByRole("heading");
+- expect(heading).toBeInTheDocument();
