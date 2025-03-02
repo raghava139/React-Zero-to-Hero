@@ -812,3 +812,12 @@ global.fetch = jest.fn(() => {
 ____getByTestId()_____
 1.inside tag attribut------> data-testid='hello'
 2.we need test by id ------> getByTestId('hello');
+
+____helper functions_____
+1.beforeAll();
+2.AfterAll();
+3.beforeEach();
+4.afterEach();
+
+____report_____
+-we have coverage report we can download and check the report of test cases !
