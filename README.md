@@ -714,8 +714,101 @@ Basic testing
 2. Querying 
 3. Assertion
 
-1. Render Method:-
+1.Render Method:-
 - Render The component like render(<comp/>) -> It will Render the JS-DOM
+Example: render(<Contact />);
+
+2.Querying:
 - Screen is an Object coming From @testing-library/react.
-Ex: screen.getByRole("heading");
-- expect(heading).toBeInTheDocument();
+Example: screen.getByRole("heading");
+
+3.Assertion:
+Example: expect(heading).toBeInTheDocument();
+----------
+-1-for render is getting from -> npm i @babel/preset-react-dev
+to make js works in test cases;
+-2-babel it will converts the react-jsx to normal HTML Code.
+-3.toBeInTheDocument()-> it is gettting from npm i @testing-library/jest-dom
+-4. getByTest()=>single, getAllByTest()=>multiple
+-5. getByRole(elementname) etc..,
+-6.ReactElement + Jsx + React Fiber Node + Virtual DOM Object ===> All these Things are same !
+
+Group-Test-Cases:
+ -----------------------------
+1- (test, it)-> is a same but most are those using "it".
+2- 10 cases in one  group we can write the test cases-
+example-1:
+describe('new-describe',()=>{
+  it('something',()=>{
+      here you can write test cases
+  })
+})
+3-you can write the describe inside describe:
+example-2:
+describe("new-one", () => {
+
+    describe("nest-one", () => {
+        it('something-it', () => {
+            let x = 20
+            expect(x).toBe(21);
+        })
+    })
+
+    describe("nest-two", () => {
+
+        test('something-it-2', () => {
+            let x = 24
+            expect(x).toBe(21);
+        })
+
+    })
+})
+
+----------------
+-1.don't push coverage folder into git(you can use .gitignore file);
+-2.JS DOM Understand the Jsx Code.
+-3.If You write some test cases in that we some situations like 
+there is a different libraries we used in our real components at the time we need to import that components also when we write test cases.
+-4.In that libary import cases we need to use like async,await and act.
+example:
+it('should search  rest list for pizza component', async () => {
+    await act(async () => render(
+        <BrowserRouter>
+            <Body />
+        </BrowserRouter>)
+    )
+    
+    const cardslist_org = screen.getAllByTestId('my_Restro_Cards');
+})
+-5.if you need event listeners you can use fireEvent;
+example:
+   const searchBtn = screen.getByRole("button", { name: 'search' })
+    const inputSearch = screen.getByTestId('input_search_test');
+    fireEvent.change(inputSearch, { target: { value: "pizza" } });
+    fireEvent.click(searchBtn);
+_______fireEvent___________
+syntax: firEvent.eventName(getbutton, {attributename: 'value'})
+
+-6.you can test The High order Component also (HOC);
+___act___
+1- act is for "state updates", "fetch".
+2- whenever using fetch the data (or) state updates. you can use wrap the component into act function coming from "react-dom/utils";
+
+___For Test HMR___
+-scripts (package.json file) - "watch-test" : "jest --watch" 
+-npm run watch-test  (command)
+ ----------------------
+-fetch is coming from Broser.but we don't have the fetch function;
+-so , we need to write the mock function inside that 
+example:
+global.fetch = jest.fn(() => {
+    return Promise.resolve({
+        json: () => {
+            return Promise.resolve(MOCK_Data)
+        }
+    })
+})
+
+____getByTestId()_____
+1.inside tag attribut------> data-testid='hello'
+2.we need test by id ------> getByTestId('hello');
